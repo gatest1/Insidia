@@ -168,7 +168,7 @@ public class AICharMovement : MonoBehaviour {
     private void LateUpdate()
     {
         //Needed to keep the NavAgent correcty in regards to the AI character.
-        _agent.velocity = _lastPosition - transform.position;
+        _agent.velocity = _charController.velocity;
         _lastPosition = transform.position;
 
         //There's no coroutine yeild instruction for something to happen in this step, so one is improvised. (This is about much work as a Coroutine does to check if it can run anyways.)

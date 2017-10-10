@@ -222,18 +222,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 178483139}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 332f98d63763cee43aed913fa827176b, type: 3}
+  m_Script: {fileID: 11500000, guid: ad2bbf5972be54049a9ec467f59ed61d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 10
   turnSpeed: 720
   jumpStrength: 10
   yVelocity: 0
   gravity: 10
   grounded: 0
   terminalVelocity: -20
-  interpolatePosition: 1
-  interpolateRotation: 1
 --- !u!195 &178483141
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -243,7 +241,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 1
+  m_Speed: 20
   m_Acceleration: 50
   avoidancePriority: 50
   m_AngularSpeed: 0
@@ -474,18 +472,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 297549338}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 332f98d63763cee43aed913fa827176b, type: 3}
+  m_Script: {fileID: 11500000, guid: ad2bbf5972be54049a9ec467f59ed61d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 10
   turnSpeed: 720
   jumpStrength: 10
   yVelocity: 0
   gravity: 10
   grounded: 0
   terminalVelocity: -20
-  interpolatePosition: 1
-  interpolateRotation: 1
 --- !u!195 &297549340
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -495,7 +491,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 1
+  m_Speed: 20
   m_Acceleration: 50
   avoidancePriority: 50
   m_AngularSpeed: 0
@@ -739,18 +735,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 444328268}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 332f98d63763cee43aed913fa827176b, type: 3}
+  m_Script: {fileID: 11500000, guid: ad2bbf5972be54049a9ec467f59ed61d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 10
   turnSpeed: 720
   jumpStrength: 10
   yVelocity: 0
   gravity: 10
   grounded: 0
   terminalVelocity: -20
-  interpolatePosition: 1
-  interpolateRotation: 1
 --- !u!195 &444328270
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -760,7 +754,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 1
+  m_Speed: 20
   m_Acceleration: 50
   avoidancePriority: 50
   m_AngularSpeed: 0
@@ -991,18 +985,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 556781685}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 332f98d63763cee43aed913fa827176b, type: 3}
+  m_Script: {fileID: 11500000, guid: ad2bbf5972be54049a9ec467f59ed61d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 10
   turnSpeed: 720
   jumpStrength: 10
   yVelocity: 0
   gravity: 10
   grounded: 0
   terminalVelocity: -20
-  interpolatePosition: 1
-  interpolateRotation: 1
 --- !u!195 &556781687
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1012,7 +1004,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 1
+  m_Speed: 20
   m_Acceleration: 50
   avoidancePriority: 50
   m_AngularSpeed: 0
@@ -1407,18 +1399,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 820733559}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 332f98d63763cee43aed913fa827176b, type: 3}
+  m_Script: {fileID: 11500000, guid: ad2bbf5972be54049a9ec467f59ed61d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 10
   turnSpeed: 720
   jumpStrength: 10
   yVelocity: 0
   gravity: 10
   grounded: 0
   terminalVelocity: -20
-  interpolatePosition: 1
-  interpolateRotation: 1
 --- !u!195 &820733561
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1428,7 +1418,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 1
+  m_Speed: 20
   m_Acceleration: 50
   avoidancePriority: 50
   m_AngularSpeed: 0
@@ -1955,18 +1945,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1166268060}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 332f98d63763cee43aed913fa827176b, type: 3}
+  m_Script: {fileID: 11500000, guid: ad2bbf5972be54049a9ec467f59ed61d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 10
   turnSpeed: 720
   jumpStrength: 10
   yVelocity: 0
   gravity: 10
   grounded: 0
   terminalVelocity: -20
-  interpolatePosition: 1
-  interpolateRotation: 1
 --- !u!195 &1166268062
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1976,7 +1964,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 1
+  m_Speed: 20
   m_Acceleration: 50
   avoidancePriority: 50
   m_AngularSpeed: 0
@@ -2427,18 +2415,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1432602036}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 332f98d63763cee43aed913fa827176b, type: 3}
+  m_Script: {fileID: 11500000, guid: ad2bbf5972be54049a9ec467f59ed61d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 10
   turnSpeed: 720
   jumpStrength: 10
   yVelocity: 0
   gravity: 10
   grounded: 0
   terminalVelocity: -20
-  interpolatePosition: 1
-  interpolateRotation: 1
 --- !u!195 &1432602038
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2448,7 +2434,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 1
+  m_Speed: 20
   m_Acceleration: 50
   avoidancePriority: 50
   m_AngularSpeed: 0
@@ -3004,18 +2990,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 2131013413}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 332f98d63763cee43aed913fa827176b, type: 3}
+  m_Script: {fileID: 11500000, guid: ad2bbf5972be54049a9ec467f59ed61d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 10
   turnSpeed: 720
   jumpStrength: 10
   yVelocity: 0
   gravity: 10
   grounded: 0
   terminalVelocity: -20
-  interpolatePosition: 1
-  interpolateRotation: 1
 --- !u!195 &2131013415
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -3025,7 +3009,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 1
+  m_Speed: 20
   m_Acceleration: 50
   avoidancePriority: 50
   m_AngularSpeed: 0

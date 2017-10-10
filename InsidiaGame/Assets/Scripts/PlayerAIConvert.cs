@@ -5,24 +5,40 @@ using UnityEngine;
 public class PlayerAIConvert : MonoBehaviour {
 
     private GameObject player;
+    public TriggerSensor sensor;
+    
 
-    private void OnTriggerEnter(Collider other)
+    private void Start()
     {
-        if (other.CompareTag("Player"))
-        {
-            player = other.gameObject;
-            StartCoroutine(ConvertNeutralAI());
-        }
+        sensor.Filter = FilterForPlayer;
     }
 
-    private void OnTriggerExit(Collider other)
+    private bool FilterForPlayer(GameObject other)
     {
-        if (other.gameObject == player)
+        if (gameObject.tag == "Player")
         {
-            player = null;
-            StopAllCoroutines();
+            MinionSquad squad = gameObject.GetComponent<MinionSquad>();
+            return squad != null && squad.minions.Count < squad.capacity;
         }
+
+        return false;
     }
+
+    private void OnEnable()
+    {
+        sensor.OnEnter += OnSensorEnter;
+    }
+
+    private void OnDisable()
+    {
+        sensor.OnEnter -= OnSensorEnter;
+    }
+
+    private void OnSensorEnter(TriggerSensor sensor, GameObject other)
+    {
+
+    }
+
     private IEnumerator ConvertNeutralAI()
     {
         yield return new WaitForSeconds(3f);

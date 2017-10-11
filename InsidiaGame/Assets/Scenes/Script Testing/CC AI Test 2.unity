@@ -207,6 +207,7 @@ GameObject:
   - component: {fileID: 178483142}
   - component: {fileID: 178483141}
   - component: {fileID: 178483140}
+  - component: {fileID: 178483150}
   m_Layer: 0
   m_Name: Capsule (6)
   m_TagString: Untagged
@@ -241,7 +242,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 20
+  m_Speed: 10
   m_Acceleration: 50
   avoidancePriority: 50
   m_AngularSpeed: 0
@@ -371,6 +372,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &178483150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 178483139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c6fe7ce2fba9094aaa60e6bdf293a93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 0
+  attackTarget: {fileID: 0}
 --- !u!1 &235914719
 GameObject:
   m_ObjectHideFlags: 0
@@ -457,6 +471,7 @@ GameObject:
   - component: {fileID: 297549341}
   - component: {fileID: 297549340}
   - component: {fileID: 297549339}
+  - component: {fileID: 297549349}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -491,7 +506,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 20
+  m_Speed: 10
   m_Acceleration: 50
   avoidancePriority: 50
   m_AngularSpeed: 0
@@ -621,6 +636,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &297549349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 297549338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c6fe7ce2fba9094aaa60e6bdf293a93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 0
+  attackTarget: {fileID: 0}
 --- !u!1 &435029586
 GameObject:
   m_ObjectHideFlags: 0
@@ -720,6 +748,7 @@ GameObject:
   - component: {fileID: 444328271}
   - component: {fileID: 444328270}
   - component: {fileID: 444328269}
+  - component: {fileID: 444328279}
   m_Layer: 0
   m_Name: Capsule (1)
   m_TagString: Untagged
@@ -754,7 +783,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 20
+  m_Speed: 10
   m_Acceleration: 50
   avoidancePriority: 50
   m_AngularSpeed: 0
@@ -884,6 +913,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &444328279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 444328268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c6fe7ce2fba9094aaa60e6bdf293a93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 0
+  attackTarget: {fileID: 0}
 --- !u!1 &530853834
 GameObject:
   m_ObjectHideFlags: 0
@@ -970,6 +1012,7 @@ GameObject:
   - component: {fileID: 556781688}
   - component: {fileID: 556781687}
   - component: {fileID: 556781686}
+  - component: {fileID: 556781696}
   m_Layer: 0
   m_Name: Capsule (2)
   m_TagString: Untagged
@@ -1004,7 +1047,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 20
+  m_Speed: 10
   m_Acceleration: 50
   avoidancePriority: 50
   m_AngularSpeed: 0
@@ -1134,6 +1177,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &556781696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 556781685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c6fe7ce2fba9094aaa60e6bdf293a93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 0
+  attackTarget: {fileID: 0}
 --- !u!1 &564648183
 GameObject:
   m_ObjectHideFlags: 0
@@ -1384,6 +1440,7 @@ GameObject:
   - component: {fileID: 820733562}
   - component: {fileID: 820733561}
   - component: {fileID: 820733560}
+  - component: {fileID: 820733570}
   m_Layer: 0
   m_Name: Capsule (4)
   m_TagString: Untagged
@@ -1418,7 +1475,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 20
+  m_Speed: 10
   m_Acceleration: 50
   avoidancePriority: 50
   m_AngularSpeed: 0
@@ -1548,6 +1605,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &820733570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 820733559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c6fe7ce2fba9094aaa60e6bdf293a93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 0
+  attackTarget: {fileID: 0}
 --- !u!1 &860795615
 GameObject:
   m_ObjectHideFlags: 0
@@ -1834,9 +1904,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 951892373}
-  - component: {fileID: 951892372}
   - component: {fileID: 951892375}
   - component: {fileID: 951892374}
+  - component: {fileID: 951892376}
   m_Layer: 0
   m_Name: Squad
   m_TagString: Untagged
@@ -1844,27 +1914,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &951892372
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 951892371}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a87a857cb60e0954c9a3adf24b151702, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  formation: {fileID: 11400000, guid: 9cae8e3d3e389874abcd54e17ef79957, type: 2}
-  units:
-  - {fileID: 297549343}
-  - {fileID: 444328273}
-  - {fileID: 556781690}
-  - {fileID: 1432602041}
-  - {fileID: 820733564}
-  - {fileID: 1166268065}
-  - {fileID: 178483144}
-  - {fileID: 2131013418}
 --- !u!4 &951892373
 Transform:
   m_ObjectHideFlags: 0
@@ -1874,7 +1923,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 17.47, y: 0, z: 0.2200012}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1768483378}
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1913,6 +1963,32 @@ PlayableDirector:
     value: {fileID: 951892371}
   m_ExposedReferences:
     m_References: []
+--- !u!114 &951892376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 951892371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1c15ff7b602ed34da95328aec3e24a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  teamNum: 0
+  minions:
+  - {fileID: 297549349}
+  - {fileID: 444328279}
+  - {fileID: 556781696}
+  - {fileID: 1432602047}
+  - {fileID: 820733570}
+  - {fileID: 1166268071}
+  - {fileID: 178483150}
+  - {fileID: 2131013424}
+  capacity: 10
+  targets: []
+  targetSensor: {fileID: 1768483376}
+  formation: {fileID: 11400000, guid: 9cae8e3d3e389874abcd54e17ef79957, type: 2}
+  range: 20
 --- !u!1 &1166268060
 GameObject:
   m_ObjectHideFlags: 0
@@ -1930,6 +2006,7 @@ GameObject:
   - component: {fileID: 1166268063}
   - component: {fileID: 1166268062}
   - component: {fileID: 1166268061}
+  - component: {fileID: 1166268071}
   m_Layer: 0
   m_Name: Capsule (5)
   m_TagString: Untagged
@@ -1964,7 +2041,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 20
+  m_Speed: 10
   m_Acceleration: 50
   avoidancePriority: 50
   m_AngularSpeed: 0
@@ -2094,6 +2171,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1166268071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1166268060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c6fe7ce2fba9094aaa60e6bdf293a93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 0
+  attackTarget: {fileID: 0}
 --- !u!1 &1251790735
 GameObject:
   m_ObjectHideFlags: 0
@@ -2400,6 +2490,7 @@ GameObject:
   - component: {fileID: 1432602039}
   - component: {fileID: 1432602038}
   - component: {fileID: 1432602037}
+  - component: {fileID: 1432602047}
   m_Layer: 0
   m_Name: Capsule (3)
   m_TagString: Untagged
@@ -2434,7 +2525,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 20
+  m_Speed: 10
   m_Acceleration: 50
   avoidancePriority: 50
   m_AngularSpeed: 0
@@ -2564,6 +2655,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1432602047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1432602036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c6fe7ce2fba9094aaa60e6bdf293a93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 0
+  attackTarget: {fileID: 0}
 --- !u!1 &1596347847
 GameObject:
   m_ObjectHideFlags: 0
@@ -2797,6 +2901,60 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1706044957}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1768483375
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1768483378}
+  - component: {fileID: 1768483377}
+  - component: {fileID: 1768483376}
+  m_Layer: 0
+  m_Name: TargetSensor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1768483376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1768483375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d548d55ea16c5d742b6fb48a5c59f1d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  notifyIfInactive: 0
+--- !u!135 &1768483377
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1768483375}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 20
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &1768483378
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1768483375}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 951892373}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1950126259
 GameObject:
   m_ObjectHideFlags: 0
@@ -2975,6 +3133,7 @@ GameObject:
   - component: {fileID: 2131013416}
   - component: {fileID: 2131013415}
   - component: {fileID: 2131013414}
+  - component: {fileID: 2131013424}
   m_Layer: 0
   m_Name: Capsule (7)
   m_TagString: Untagged
@@ -3009,7 +3168,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 20
+  m_Speed: 10
   m_Acceleration: 50
   avoidancePriority: 50
   m_AngularSpeed: 0
@@ -3139,6 +3298,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2131013424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2131013413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c6fe7ce2fba9094aaa60e6bdf293a93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 0
+  attackTarget: {fileID: 0}
 --- !u!1 &2143514108
 GameObject:
   m_ObjectHideFlags: 0

@@ -3,22 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class AISquad_CC : MonoBehaviour {
+public class FormationManager : MonoBehaviour {
 
     public SquadFormation formation;
-    public List<AICharMovement> units;
 	
-	// Update is called once per frame
-	void Start () {
-        StartCoroutine(this.UpdateCoroutine(10f, SetUnitGoalsToPositions));
-    }
-
-    public void SetUnitGoalsToPositions()
+    public void SetMinionGoalsToPositions(List<Minion> units)
     {
         if (units != null && units.Count == 0)
             return;
 
-        List<AICharMovement> unitsToAssign = new List<AICharMovement>(units);
+        List<AICharMovement> unitsToAssign = new List<AICharMovement>(units.Count);
+        units.ForEach(unit => unitsToAssign.Add(unit.GetComponent<AICharMovement>()));
 
         //Check all positions against our current position to make sure they are valid.
 
@@ -47,7 +42,7 @@ public class AISquad_CC : MonoBehaviour {
                 {
                     //Then make sure there's a position on the NavMesh that can correspond to that position.
                     NavMeshHit navMeshHit;
-                    if (NavMesh.SamplePosition(raycastHit.point, out navMeshHit, formation.maxNavMeshVariance, units[0].Agent.areaMask))
+                    if (NavMesh.SamplePosition(raycastHit.point, out navMeshHit, formation.maxNavMeshVariance, unitsToAssign[0].Agent.areaMask))
                     {
                         //Fill out each row in the 2D list as we get to it.
                         if (validPositions.Count < validCountsCount + 1)

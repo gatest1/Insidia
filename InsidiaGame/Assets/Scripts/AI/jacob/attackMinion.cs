@@ -30,6 +30,7 @@ public class attackMinion : MonoBehaviour {
     void attackEnemyPlayer()
     {
         print("Attacked");
+
     }
     void attackEnemyMinion()
     {

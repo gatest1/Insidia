@@ -30,12 +30,21 @@ public class Minion : MonoBehaviour {
             {
                 Squad.minions.Remove(this);
                 //unsub delegates
-            }
 
-            //Join new squad code
-            Squad = newSquad;
-            Squad.minions.Add(this);
-            //subscr to delegates
+                //join new squad
+                Squad = newSquad;
+                Squad.minions.Add(this);
+                //subscr to delegates
+            }
+            else
+            {
+                //Intialize self into squad
+                Squad = newSquad;
+                if (!Squad.minions.Contains(this))
+                    Squad.minions.Add(this);
+
+                //subscr to delegates
+            }
         }
     }
 

@@ -5,13 +5,13 @@ using UnityEngine;
 public class PlayerAIConvert : MonoBehaviour {
 
     private GameObject player;
-    public TriggerSensor sensor;
+    //public TriggerSensor sensor;
     
 
-    private void Start()
-    {
-        sensor.Filter = FilterForPlayer;
-    }
+    //private void Start()
+    //{
+    //    sensor.Filter = FilterForPlayer;
+    //}
 
     private bool FilterForPlayer(GameObject other)
     {
@@ -26,12 +26,12 @@ public class PlayerAIConvert : MonoBehaviour {
 
     private void OnEnable()
     {
-        sensor.OnEnter += OnSensorEnter;
+        //sensor.OnEnter += OnSensorEnter;
     }
 
     private void OnDisable()
     {
-        sensor.OnEnter -= OnSensorEnter;
+        //sensor.OnEnter -= OnSensorEnter;
     }
 
     private void OnSensorEnter(TriggerSensor sensor, GameObject other)

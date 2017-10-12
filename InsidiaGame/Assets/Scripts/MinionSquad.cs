@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class MinionSquad : MonoBehaviour {
     public int teamNum = 0;
@@ -11,6 +12,7 @@ public class MinionSquad : MonoBehaviour {
     public TriggerSensor targetSensor;
     public FormationManager formation;
     public float range = 20f;
+    static public Action alone;
 
     private void Start()
     {
@@ -52,4 +54,6 @@ public class MinionSquad : MonoBehaviour {
     {
         formation.SetMinionGoalsToPositions(GetMinionsInState(Minion.State.Follow));
     }
+
+
 }

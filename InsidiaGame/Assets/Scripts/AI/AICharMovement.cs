@@ -160,13 +160,15 @@ public class AICharMovement : MonoBehaviour {
         moveInput.y = 0;
         moveInput.Normalize();
 
+        moveInput *= (_agent.desiredVelocity.magnitude / _agent.speed);
+
         _charInput.Move.Value = new Vector2(moveInput.x, moveInput.z);
    }
 
     private void LateUpdate()
     {
         //Needed to keep the NavAgent correcty in regards to the AI character.
-        _agent.velocity = _lastPosition - transform.position;
+        _agent.velocity = _charController.velocity;
         _lastPosition = transform.position;
 
         //There's no coroutine yeild instruction for something to happen in this step, so one is improvised. (This is about much work as a Coroutine does to check if it can run anyways.)

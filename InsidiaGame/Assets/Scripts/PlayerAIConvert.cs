@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(MinionSquad))]
 public class PlayerAIConvert : MonoBehaviour, ISensorListener {
 
+
     private MinionSquad _squad;
     public TriggerSensor2 minionSensor;
     public Dictionary<Minion, float> convertingMinions = new Dictionary<Minion, float>();
@@ -16,6 +17,7 @@ public class PlayerAIConvert : MonoBehaviour, ISensorListener {
         _squad = GetComponent<MinionSquad>();
     }
 
+
     private void Start()
     {
         minionSensor.Setup(this, FilterForMinion);
@@ -23,8 +25,10 @@ public class PlayerAIConvert : MonoBehaviour, ISensorListener {
 
     private bool FilterForMinion(GameObject other)
     {
+
         Minion minion = other.GetComponent<Minion>();
         return (minion && IsMinionValidConversionTarget(minion));
+
     }
 
     private bool IsMinionValidConversionTarget(Minion minion)

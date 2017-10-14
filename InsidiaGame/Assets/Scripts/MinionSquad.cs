@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class MinionSquad : MonoBehaviour, ISensorListener {
     public int teamNum = 0;
@@ -11,6 +12,7 @@ public class MinionSquad : MonoBehaviour, ISensorListener {
     public TriggerSensor2 targetSensor;
     public SquadFormation formation;
     public float range = 20f;
+    static public Action alone;
 
     private void Start()
     {
@@ -69,4 +71,6 @@ public class MinionSquad : MonoBehaviour, ISensorListener {
         if (gameCharacter)
             targets.Remove(gameCharacter);
     }
+
+
 }

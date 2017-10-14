@@ -13,6 +13,10 @@ public class Minion : MonoBehaviour {
     public MinionSquad Squad { get; private set; }
     private AICharMovement _charMovement;
 
+    //Jacob Ressler
+    public static Action<bool> Thing;
+    private bool EnemyAlone = true;
+
     //public event Action<Minion, GameCharacter> Attacked;
 
     //private void OnTakeDamage()
@@ -51,6 +55,7 @@ public class Minion : MonoBehaviour {
     public void Start()
     {
         _charMovement = GetComponent<AICharMovement>();
+        Thing += canAttackPlayer;
     }
 
     public void OnEnable()
@@ -119,5 +124,35 @@ public class Minion : MonoBehaviour {
         {
             _charMovement.Goal = Squad.transform.position;
         }
+    }
+
+    //Jacob Ressler
+    //from attackMinion Script
+    private void OnTriggerStay(Collider other)
+    {
+        PlayerSquadManager.alone();
+        if (EnemyAlone)
+        {
+            attackEnemyPlayer();
+        }
+        else
+        {
+            attackEnemyMinion();
+        }
+    }
+
+    void attackEnemyPlayer()
+    {
+        print("Attacked");
+
+    }
+    void attackEnemyMinion()
+    {
+
+    }
+
+    void canAttackPlayer(bool t)
+    {
+        EnemyAlone = t;
     }
 }

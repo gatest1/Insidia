@@ -2,64 +2,107 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerAIConvert : MonoBehaviour {
+[RequireComponent(typeof(MinionSquad))]
+public class PlayerAIConvert : MonoBehaviour, ISensorListener {
 
-    private GameObject player;
-    //public TriggerSensor sensor;
-    
 
-    //private void Start()
-    //{
-    //    sensor.Filter = FilterForPlayer;
-    //}
+    private MinionSquad _squad;
+    public TriggerSensor2 minionSensor;
+    public Dictionary<Minion, float> convertingMinions = new Dictionary<Minion, float>();
 
-    private bool FilterForPlayer(GameObject other)
+    public float timeToConvert = 3f;
+
+    private void Awake()
     {
-        if (gameObject.tag == "Player")
+        _squad = GetComponent<MinionSquad>();
+    }
+
+
+    private void Start()
+    {
+        minionSensor.Setup(this, FilterForMinion);
+    }
+
+    private bool FilterForMinion(GameObject other)
+    {
+
+        Minion minion = other.GetComponent<Minion>();
+        return (minion && IsMinionValidConversionTarget(minion));
+
+    }
+
+    private bool IsMinionValidConversionTarget(Minion minion)
+    {
+        return ((_squad.minions.Count < _squad.capacity) && (minion.tag == "AI Neutral") && (minion.state != Minion.State.Attack));
+    }
+
+    public void OnSensorEnter(TriggerSensor2 sensor, GameObject other)
+    {
+        Minion minion = other.GetComponent<Minion>();
+
+        if (!convertingMinions.ContainsKey(minion))
         {
-            MinionSquad squad = gameObject.GetComponent<MinionSquad>();
-            return squad != null && squad.minions.Count < squad.capacity;
+            convertingMinions.Add(minion, 0f);
+            StartCoroutine(ConvertNeutralAI(minion));
         }
-
-        return false;
     }
 
-    private void OnEnable()
+    public void OnSensorExit(TriggerSensor2 sensor, GameObject other) { }
+
+    private IEnumerator ConvertNeutralAI(Minion minion)
     {
-        //sensor.OnEnter += OnSensorEnter;
+        float lastUpdateTime = Time.time;
+        float deltaTime = 0f;
+
+        while (true)
+        {
+            yield return new WaitForSeconds(0.5f);
+            deltaTime = Time.time - lastUpdateTime;
+            lastUpdateTime = Time.time;
+
+            //If the minion is no longer valid, stop the coroutine as it is definately not getting converted.
+            if (!IsMinionValidConversionTarget(minion))
+            {
+                convertingMinions.Remove(minion);
+                ShowConversionProgress(minion, 0f);
+                yield break;
+            }
+
+            //Update the progressed based on whether or not it's in the sensor range.
+            float conversionProgress = convertingMinions[minion];
+            conversionProgress += ((minionSensor.sensedObjects.Contains(minion.gameObject)) ? deltaTime : -deltaTime);
+            convertingMinions[minion] = conversionProgress;
+            ShowConversionProgress(minion, conversionProgress / timeToConvert);
+
+            //Conversion success!
+            if (conversionProgress >= timeToConvert)
+            {
+                //Convert the guy
+                Convert(minion);
+                //Remove him from the set of minions being currently converted.
+                convertingMinions.Remove(minion);
+                //And stop the coroutine.
+                yield break;
+            }
+            //Conversion failure...
+            else if (conversionProgress <= 0f)
+            {
+                convertingMinions.Remove(minion);
+                yield break;
+            }
+        }
     }
 
-    private void OnDisable()
+    private void ShowConversionProgress(Minion minion, float percent)
     {
-        //sensor.OnEnter -= OnSensorEnter;
+        minion.GetComponent<Renderer>().material.color = Color.Lerp(Color.yellow, Color.green, percent);
     }
 
-    private void OnSensorEnter(TriggerSensor sensor, GameObject other)
+    private void Convert(Minion minion)
     {
+        minion.tag = "AI Friendly";
+        //minion.GetComponent<Renderer>().material.color = Color.green;
 
-    }
-
-    private IEnumerator ConvertNeutralAI()
-    {
-        yield return new WaitForSeconds(3f);
-
-        //Check to make sure Neutral AI is not in the attack state every half a second or so.
-
-        Convert();
-    }
-
-    private void Convert()
-    {
-        gameObject.tag = "AI Friendly";
-
-        gameObject.GetComponent<Renderer>().material.color = Color.green;
-
-        GetComponent<DinoTeam>().teamNum = player.GetComponent<DinoTeam>().teamNum;
-
-        //change AI's squad to our squad.
-
-        GetComponent<AIBrainFollowPlayer>().enabled = true;
-
-        this.enabled = false; // Disable script to stop converting.
+        minion.ChangeSquad(_squad);
     }
 }

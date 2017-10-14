@@ -2,20 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+[RequireComponent(typeof(Collider))]
 public class TriggerSensor2 : MonoBehaviour {
+
+    private Collider _collider;
 
     private ISensorListener _listener;
     private MonoBehaviour _listenerBehaviour;
     public MonoBehaviour Listener { get { return _listenerBehaviour; } }
 
-    List<GameObject> sensedObjects = new List<GameObject>();
+    public List<GameObject> sensedObjects = new List<GameObject>();
     public Predicate<GameObject> Filter = (gameObject => true);
     public bool notifyIfInactive = false;
     
     
     public void Setup<T>(T listener) where T : MonoBehaviour, ISensorListener
     {
-        Setup(listener, Filter);
+        _listener = listener;
+        _listenerBehaviour = listener;
     }
 
     public void Setup<T>(T listener, Predicate<GameObject> filter) where T : MonoBehaviour, ISensorListener
@@ -25,13 +29,28 @@ public class TriggerSensor2 : MonoBehaviour {
         Filter = filter;
     }
 
+    private void Awake()
+    {
+        _collider = GetComponent<Collider>();
+    }
+
+    private void OnEnable()
+    {
+        _collider.enabled = true;
+    }
+
+    private void OnDisable()
+    {
+        _collider.enabled = false;
+    }
+
     public void OnTriggerEnter(Collider target)
     {
         if (Filter(target.gameObject))
         {
             sensedObjects.Add(target.gameObject);
             if (_listener != null && (notifyIfInactive || _listenerBehaviour.enabled))
-                _listener.OnSensorEnter(target.gameObject);
+                _listener.OnSensorEnter(this, target.gameObject);
         }
     }
 
@@ -40,7 +59,7 @@ public class TriggerSensor2 : MonoBehaviour {
     {
         if (sensedObjects.Remove(target.gameObject))
             if (_listener != null && (notifyIfInactive || _listenerBehaviour.enabled))
-                _listener.OnSensorExit(target.gameObject);
+                _listener.OnSensorExit(this, target.gameObject);
     }
 
 }

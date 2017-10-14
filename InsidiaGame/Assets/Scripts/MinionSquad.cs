@@ -26,7 +26,7 @@ public class MinionSquad : MonoBehaviour, ISensorListener {
         Minion otherMinion = other.GetComponent<Minion>();
         if (otherMinion)
         {
-            return otherMinion.Squad.teamNum != this.teamNum;
+            return (otherMinion.Squad != null) && (otherMinion.Squad.teamNum != this.teamNum);
         }
         else if (other.tag == "Player")
         {
@@ -43,7 +43,7 @@ public class MinionSquad : MonoBehaviour, ISensorListener {
             minion.ChangeSquad(this);
         }
 
-        StartCoroutine(this.UpdateCoroutine(10f, SquadUpdate));
+        StartCoroutine(this.UpdateCoroutine(30f, SquadUpdate));
     }
 
     private List<Minion> GetMinionsInState(Minion.State state)
@@ -56,14 +56,14 @@ public class MinionSquad : MonoBehaviour, ISensorListener {
         formation.SetMinionGoalsToPositions(transform, GetMinionsInState(Minion.State.Follow));
     }
 
-    public void OnSensorEnter(GameObject other)
+    public void OnSensorEnter(TriggerSensor2 sensor, GameObject other)
     {
         GameCharacter gameCharacter = other.GetComponent<GameCharacter>();
         if (gameCharacter)
             targets.Add(gameCharacter);
     }
 
-    public void OnSensorExit(GameObject other)
+    public void OnSensorExit(TriggerSensor2 sensor, GameObject other)
     {
         GameCharacter gameCharacter = other.GetComponent<GameCharacter>();
         if (gameCharacter)

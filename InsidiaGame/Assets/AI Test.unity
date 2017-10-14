@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -108,6 +108,61 @@ NavMeshSettings:
     tileSize: 256
     accuratePlacement: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &409571916
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 409571917}
+  - component: {fileID: 409571919}
+  - component: {fileID: 409571918}
+  m_Layer: 0
+  m_Name: MinionConversionSensor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &409571917
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 409571916}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 632103636}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &409571918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 409571916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d548d55ea16c5d742b6fb48a5c59f1d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sensedObjects: []
+  notifyIfInactive: 0
+--- !u!135 &409571919
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 409571916}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &470106486
 GameObject:
   m_ObjectHideFlags: 0
@@ -201,6 +256,8 @@ GameObject:
   - component: {fileID: 632103637}
   - component: {fileID: 632103638}
   - component: {fileID: 632103639}
+  - component: {fileID: 632103641}
+  - component: {fileID: 632103640}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -271,6 +328,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1943790585}
+  - {fileID: 409571917}
+  - {fileID: 1597831973}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -322,6 +381,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teamNum: 1
+--- !u!114 &632103640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 632103632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18541ed2d5f6b4b4b81fbbaf1a718aae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minionSensor: {fileID: 409571918}
+  timeToConvert: 3
+--- !u!114 &632103641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 632103632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1c15ff7b602ed34da95328aec3e24a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  teamNum: 0
+  minions: []
+  capacity: 10
+  targets: []
+  targetSensor: {fileID: 1597831974}
+  formation: {fileID: 11400000, guid: 7c5851e468dc2eb479f09b80450657d3, type: 2}
+  range: 20
 --- !u!1 &657499548
 GameObject:
   m_ObjectHideFlags: 0
@@ -333,14 +423,11 @@ GameObject:
   - component: {fileID: 657499559}
   - component: {fileID: 657499558}
   - component: {fileID: 657499557}
-  - component: {fileID: 657499556}
-  - component: {fileID: 657499555}
-  - component: {fileID: 657499554}
   - component: {fileID: 657499553}
   - component: {fileID: 657499552}
   - component: {fileID: 657499551}
-  - component: {fileID: 657499550}
   - component: {fileID: 657499549}
+  - component: {fileID: 657499550}
   m_Layer: 0
   m_Name: Minion (1)
   m_TagString: AI Neutral
@@ -356,31 +443,29 @@ MonoBehaviour:
   m_GameObject: {fileID: 657499548}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 332f98d63763cee43aed913fa827176b, type: 3}
+  m_Script: {fileID: 11500000, guid: ad2bbf5972be54049a9ec467f59ed61d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 9.5
+  speed: 12
   turnSpeed: 720
   jumpStrength: 10
   yVelocity: 0
   gravity: 10
   grounded: 0
   terminalVelocity: -20
-  interpolatePosition: 1
-  interpolateRotation: 1
 --- !u!114 &657499550
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 657499548}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f7ab1623540aa240ad4d2eb9bd030d1, type: 3}
+  m_Script: {fileID: 11500000, guid: 7c6fe7ce2fba9094aaa60e6bdf293a93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scanRadius: 10
-  target: {fileID: 0}
+  state: 0
+  attackTarget: {fileID: 0}
 --- !u!114 &657499551
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -402,11 +487,11 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 1
-  m_Speed: 3.5
-  m_Acceleration: 8
+  m_Speed: 12
+  m_Acceleration: 5
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 4.5
+  m_StoppingDistance: 0.5
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -423,41 +508,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d69610ad7ff6be74aa9d924f74607452, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &657499554
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 657499548}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14e4822f3887c514b8f03c6fa39426d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  teamNum: 0
---- !u!135 &657499555
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 657499548}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 2.5
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &657499556
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 657499548}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18541ed2d5f6b4b4b81fbbaf1a718aae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!143 &657499557
@@ -582,14 +632,11 @@ GameObject:
   - component: {fileID: 1468796004}
   - component: {fileID: 1468796003}
   - component: {fileID: 1468796002}
-  - component: {fileID: 1468796001}
-  - component: {fileID: 1468796000}
-  - component: {fileID: 1468795999}
   - component: {fileID: 1468795998}
   - component: {fileID: 1468795997}
   - component: {fileID: 1468795996}
-  - component: {fileID: 1468795995}
   - component: {fileID: 1468795994}
+  - component: {fileID: 1468795995}
   m_Layer: 0
   m_Name: Minion (2)
   m_TagString: AI Neutral
@@ -605,31 +652,29 @@ MonoBehaviour:
   m_GameObject: {fileID: 1468795993}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 332f98d63763cee43aed913fa827176b, type: 3}
+  m_Script: {fileID: 11500000, guid: ad2bbf5972be54049a9ec467f59ed61d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 9.5
+  speed: 12
   turnSpeed: 720
   jumpStrength: 10
   yVelocity: 0
   gravity: 10
   grounded: 0
   terminalVelocity: -20
-  interpolatePosition: 1
-  interpolateRotation: 1
 --- !u!114 &1468795995
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1468795993}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f7ab1623540aa240ad4d2eb9bd030d1, type: 3}
+  m_Script: {fileID: 11500000, guid: 7c6fe7ce2fba9094aaa60e6bdf293a93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scanRadius: 10
-  target: {fileID: 0}
+  state: 0
+  attackTarget: {fileID: 0}
 --- !u!114 &1468795996
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -651,11 +696,11 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 1
-  m_Speed: 3.5
-  m_Acceleration: 8
+  m_Speed: 12
+  m_Acceleration: 5
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 4.5
+  m_StoppingDistance: 0.5
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -672,41 +717,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d69610ad7ff6be74aa9d924f74607452, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1468795999
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1468795993}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14e4822f3887c514b8f03c6fa39426d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  teamNum: 0
---- !u!135 &1468796000
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1468795993}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 2.5
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1468796001
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1468795993}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18541ed2d5f6b4b4b81fbbaf1a718aae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!143 &1468796002
@@ -778,6 +788,61 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!1 &1597831972
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1597831973}
+  - component: {fileID: 1597831975}
+  - component: {fileID: 1597831974}
+  m_Layer: 0
+  m_Name: EnemySensor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1597831973
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1597831972}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 632103636}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1597831974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1597831972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d548d55ea16c5d742b6fb48a5c59f1d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sensedObjects: []
+  notifyIfInactive: 0
+--- !u!135 &1597831975
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1597831972}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 20
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1778635445
 GameObject:
   m_ObjectHideFlags: 0
@@ -902,14 +967,11 @@ GameObject:
   - component: {fileID: 1819877203}
   - component: {fileID: 1819877201}
   - component: {fileID: 1819877205}
-  - component: {fileID: 1819877206}
-  - component: {fileID: 1819877202}
-  - component: {fileID: 1819877207}
   - component: {fileID: 1819877211}
   - component: {fileID: 1819877210}
   - component: {fileID: 1819877209}
-  - component: {fileID: 1819877208}
-  - component: {fileID: 1819877212}
+  - component: {fileID: 1819877206}
+  - component: {fileID: 1819877207}
   m_Layer: 0
   m_Name: Minion
   m_TagString: AI Neutral
@@ -949,18 +1011,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!135 &1819877202
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1819877200}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 2.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &1819877203
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1006,9 +1056,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1819877200}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18541ed2d5f6b4b4b81fbbaf1a718aae, type: 3}
+  m_Script: {fileID: 11500000, guid: ad2bbf5972be54049a9ec467f59ed61d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 12
+  turnSpeed: 720
+  jumpStrength: 10
+  yVelocity: 0
+  gravity: 10
+  grounded: 0
+  terminalVelocity: -20
 --- !u!114 &1819877207
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1017,23 +1074,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1819877200}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14e4822f3887c514b8f03c6fa39426d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 7c6fe7ce2fba9094aaa60e6bdf293a93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  teamNum: 0
---- !u!114 &1819877208
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1819877200}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f7ab1623540aa240ad4d2eb9bd030d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scanRadius: 10
-  target: {fileID: 0}
+  state: 0
+  attackTarget: {fileID: 0}
 --- !u!114 &1819877209
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1055,11 +1100,11 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 1
-  m_Speed: 3.5
-  m_Acceleration: 8
+  m_Speed: 12
+  m_Acceleration: 5
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 4.5
+  m_StoppingDistance: 0.5
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -1078,26 +1123,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d69610ad7ff6be74aa9d924f74607452, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1819877212
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1819877200}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 332f98d63763cee43aed913fa827176b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 9.5
-  turnSpeed: 720
-  jumpStrength: 10
-  yVelocity: 0
-  gravity: 10
-  grounded: 0
-  terminalVelocity: -20
-  interpolatePosition: 1
-  interpolateRotation: 1
 --- !u!1 &1900285202
 GameObject:
   m_ObjectHideFlags: 0
@@ -1109,14 +1134,11 @@ GameObject:
   - component: {fileID: 1900285213}
   - component: {fileID: 1900285212}
   - component: {fileID: 1900285211}
-  - component: {fileID: 1900285210}
-  - component: {fileID: 1900285209}
-  - component: {fileID: 1900285208}
   - component: {fileID: 1900285207}
   - component: {fileID: 1900285206}
   - component: {fileID: 1900285205}
-  - component: {fileID: 1900285204}
   - component: {fileID: 1900285203}
+  - component: {fileID: 1900285204}
   m_Layer: 0
   m_Name: Minion (3)
   m_TagString: AI Neutral
@@ -1132,31 +1154,29 @@ MonoBehaviour:
   m_GameObject: {fileID: 1900285202}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 332f98d63763cee43aed913fa827176b, type: 3}
+  m_Script: {fileID: 11500000, guid: ad2bbf5972be54049a9ec467f59ed61d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 9.5
+  speed: 12
   turnSpeed: 720
   jumpStrength: 10
   yVelocity: 0
   gravity: 10
   grounded: 0
   terminalVelocity: -20
-  interpolatePosition: 1
-  interpolateRotation: 1
 --- !u!114 &1900285204
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1900285202}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f7ab1623540aa240ad4d2eb9bd030d1, type: 3}
+  m_Script: {fileID: 11500000, guid: 7c6fe7ce2fba9094aaa60e6bdf293a93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scanRadius: 10
-  target: {fileID: 0}
+  state: 0
+  attackTarget: {fileID: 0}
 --- !u!114 &1900285205
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1178,11 +1198,11 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 1
-  m_Speed: 3.5
-  m_Acceleration: 8
+  m_Speed: 12
+  m_Acceleration: 5
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 4.5
+  m_StoppingDistance: 0.5
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -1199,41 +1219,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d69610ad7ff6be74aa9d924f74607452, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1900285208
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1900285202}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14e4822f3887c514b8f03c6fa39426d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  teamNum: 0
---- !u!135 &1900285209
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1900285202}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 2.5
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1900285210
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1900285202}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18541ed2d5f6b4b4b81fbbaf1a718aae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!143 &1900285211

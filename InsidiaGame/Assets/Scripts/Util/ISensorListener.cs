@@ -4,7 +4,7 @@ using System.Collections;
 
 public interface ISensorListener
 {
-    void OnSensorEnter(GameObject other);
+    void OnSensorEnter(TriggerSensor2 sensor, GameObject other);
 
-    void OnSensorExit(GameObject other);
+    void OnSensorExit(TriggerSensor2 sensor, GameObject other);
 }

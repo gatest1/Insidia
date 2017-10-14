@@ -1,0 +1,204 @@
+fileFormatVersion: 2
+guid: e23db0ffda5018b498a344608f70fc27
+timeCreated: 1507827441
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: Basalt_A1
+    100002: Basalt_A2
+    100004: Basalt_A3
+    100006: Basalt_A4
+    100008: Basalt_A5
+    100010: Basalt_A6
+    100012: Basalt_B1
+    100014: Basalt_B2
+    100016: Basalt_B3
+    100018: Basalt_B4
+    100020: Basalt_B5
+    100022: Basalt_B6
+    100024: Basalt_C1
+    100026: Basalt_C2
+    100028: Basalt_C3
+    100030: Basalt_C4
+    100032: Base
+    100034: Base 1
+    100036: Base_Joint
+    100038: Controls
+    100040: Geometry
+    100042: //RootNode
+    100044: Shell
+    100046: Shell_Ctrl
+    100048: Shell_Ctrl_Grp
+    100050: Shell_Joint
+    100052: Skeleton
+    100054: Transform_Ctrl
+    100056: Transform_Grp
+    400000: Basalt_A1
+    400002: Basalt_A2
+    400004: Basalt_A3
+    400006: Basalt_A4
+    400008: Basalt_A5
+    400010: Basalt_A6
+    400012: Basalt_B1
+    400014: Basalt_B2
+    400016: Basalt_B3
+    400018: Basalt_B4
+    400020: Basalt_B5
+    400022: Basalt_B6
+    400024: Basalt_C1
+    400026: Basalt_C2
+    400028: Basalt_C3
+    400030: Basalt_C4
+    400032: Base
+    400034: Base 1
+    400036: Base_Joint
+    400038: Controls
+    400040: Geometry
+    400042: //RootNode
+    400044: Shell
+    400046: Shell_Ctrl
+    400048: Shell_Ctrl_Grp
+    400050: Shell_Joint
+    400052: Skeleton
+    400054: Transform_Ctrl
+    400056: Transform_Grp
+    4300000: Base
+    4300002: Basalt_A1
+    4300004: Basalt_A2
+    4300006: Basalt_A3
+    4300008: Basalt_A4
+    4300010: Basalt_A5
+    4300012: Basalt_A6
+    4300014: Basalt_B1
+    4300016: Basalt_B2
+    4300018: Basalt_B3
+    4300020: Basalt_B4
+    4300022: Basalt_B5
+    4300024: Basalt_B6
+    4300026: Basalt_C1
+    4300028: Basalt_C2
+    4300030: Basalt_C3
+    4300032: Basalt_C4
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: Basalt_A1
+    13700002: Basalt_A2
+    13700004: Basalt_A3
+    13700006: Basalt_A4
+    13700008: Basalt_A5
+    13700010: Basalt_A6
+    13700012: Basalt_B1
+    13700014: Basalt_B2
+    13700016: Basalt_B3
+    13700018: Basalt_B4
+    13700020: Basalt_B5
+    13700022: Basalt_B6
+    13700024: Basalt_C1
+    13700026: Basalt_C2
+    13700028: Basalt_C3
+    13700030: Basalt_C4
+    13700032: Base 1
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 121
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
